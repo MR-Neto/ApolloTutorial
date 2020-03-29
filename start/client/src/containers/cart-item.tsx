@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 
 import LaunchTile from '../components/launch-tile';
 import * as LaunchDetailTypes from '../pages/__generated__/LaunchDetails';
+import { LAUNCH_TILE_DATA } from '../pages/launches';
 
 export const GET_LAUNCH = gql`
   query GetLaunch($launchId: ID!) {
@@ -11,6 +12,7 @@ export const GET_LAUNCH = gql`
       ...LaunchTile
     }
   }
+  ${LAUNCH_TILE_DATA}
 `;
 
 interface CartItemProps extends LaunchDetailTypes.LaunchDetailsVariables {}
